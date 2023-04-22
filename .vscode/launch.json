@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-ServicioProductosApplication<servicio-productos>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "co.ucentral.edu.co.servicio.productos.ServicioProductosApplication",
+            "projectName": "servicio-productos",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
