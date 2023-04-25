@@ -12,6 +12,10 @@ import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name = "productos")
@@ -22,8 +26,17 @@ public class Producto implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @NotEmpty(message = "no puede ser vacio.")
+    @Size(min = 8, max = 40, message = "el número de caracteres debe estar entre 8 y 40.")
     private String nombre;
+
+    @Positive(message = "no puede ser negativo")
+    @NotNull(message = "no puede ser vacio.")
     private Integer cantidad;
+
+    @Positive(message = "no puede ser negativo")
+    @NotNull(message = "no puede ser vacio.")
     private Float precio;
 
     @Temporal(TemporalType.DATE)

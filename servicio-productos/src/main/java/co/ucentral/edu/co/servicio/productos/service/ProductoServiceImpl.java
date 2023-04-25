@@ -3,6 +3,8 @@ package co.ucentral.edu.co.servicio.productos.service;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -19,6 +21,12 @@ public class ProductoServiceImpl implements ProductoService {
     @Transactional(readOnly = true)
     public Iterable<Producto> findAll() {
         return repository.findAll();
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public Page<Producto> findAll(Pageable pageable) {
+        return repository.findAll(pageable);
     }
 
     @Override
