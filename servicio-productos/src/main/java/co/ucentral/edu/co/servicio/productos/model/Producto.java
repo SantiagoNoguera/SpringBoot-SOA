@@ -3,11 +3,14 @@ package co.ucentral.edu.co.servicio.productos.model;
 import java.io.Serializable;
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
@@ -42,6 +45,10 @@ public class Producto implements Serializable {
     @Temporal(TemporalType.DATE)
     @Column(name = "create_at")
     private Date createAt;
+
+    @Lob
+    @JsonIgnore
+    private byte[] imagen;
 
     @PrePersist
     public void prePersit() {
@@ -86,6 +93,18 @@ public class Producto implements Serializable {
 
     public void setCreateAt(Date createAt) {
         this.createAt = createAt;
+    }
+
+    public byte[] getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(byte[] imagen) {
+        this.imagen = imagen;
+    }
+
+    public Integer getImagenHashCode() {
+        return (this.imagen != null) ? imagen.hashCode() : null;
     }
 
 }
