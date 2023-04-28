@@ -5,12 +5,16 @@ import java.util.Date;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.Lob;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
@@ -49,6 +53,10 @@ public class Producto implements Serializable {
     @Lob
     @JsonIgnore
     private byte[] imagen;
+
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "especificacion_id")
+    private EspecificacionTecnica especificacion;
 
     @PrePersist
     public void prePersit() {
@@ -105,6 +113,18 @@ public class Producto implements Serializable {
 
     public Integer getImagenHashCode() {
         return (this.imagen != null) ? imagen.hashCode() : null;
+    }
+
+    public static long getSerialversionuid() {
+        return serialVersionUID;
+    }
+
+    public EspecificacionTecnica getEspecificacion() {
+        return especificacion;
+    }
+
+    public void setEspecificacion(EspecificacionTecnica especificacion) {
+        this.especificacion = especificacion;
     }
 
 }

@@ -45,6 +45,7 @@ public class ProductoController extends CommonController<Producto, ProductoServi
         productoBD.setNombre(producto.getNombre());
         productoBD.setCantidad(producto.getCantidad());
         productoBD.setPrecio(producto.getPrecio());
+        productoBD.setEspecificacion(producto.getEspecificacion());
 
         return ResponseEntity.status(HttpStatus.CREATED).body(service.save(productoBD));
     }
@@ -71,6 +72,7 @@ public class ProductoController extends CommonController<Producto, ProductoServi
         productoBD.setNombre(producto.getNombre());
         productoBD.setCantidad(producto.getCantidad());
         productoBD.setPrecio(producto.getPrecio());
+        productoBD.setEspecificacion(producto.getEspecificacion());
 
         if (!archivo.isEmpty()) {
             productoBD.setImagen(archivo.getBytes());
