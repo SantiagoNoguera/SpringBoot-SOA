@@ -20,8 +20,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import co.edu.ucentral.common.producto.model.Producto;
 import co.edu.ucentral.commons.services.controller.CommonController;
-import co.ucentral.edu.co.servicio.productos.model.Producto;
 import co.ucentral.edu.co.servicio.productos.service.ProductoService;
 import jakarta.validation.Valid;
 
