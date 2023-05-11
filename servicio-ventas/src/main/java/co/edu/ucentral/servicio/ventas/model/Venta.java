@@ -5,6 +5,7 @@ import java.util.Date;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import co.edu.ucentral.common.cliente.model.Cliente;
 import co.edu.ucentral.common.producto.model.Producto;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;

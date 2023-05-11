@@ -18,8 +18,18 @@
 	</properties>
 	<dependencies>
 		<dependency>
+			<groupId>co.edu.ucentral.commons.services</groupId>
+			<artifactId>commons-services</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
 			<groupId>co.edu.ucentral.common.producto</groupId>
 			<artifactId>common-producto</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>co.edu.ucentral.common.cliente</groupId>
+			<artifactId>common-cliente</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
