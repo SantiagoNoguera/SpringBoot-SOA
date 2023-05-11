@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import co.edu.ucentral.common.cliente.model.Cliente;
 import co.edu.ucentral.commons.services.controller.CommonController;
-import co.edu.ucentral.servicio.clientes.model.Cliente;
 import co.edu.ucentral.servicio.clientes.service.ClienteService;
 
 @RestController
