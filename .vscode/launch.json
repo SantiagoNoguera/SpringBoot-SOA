@@ -29,6 +29,16 @@
             "projectName": "servicio-clientes",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ServicioUsuariosApplication<servicio-usuarios>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "co.edu.ucentral.servicio.usuarios.ServicioUsuariosApplication",
+            "projectName": "servicio-usuarios",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }
