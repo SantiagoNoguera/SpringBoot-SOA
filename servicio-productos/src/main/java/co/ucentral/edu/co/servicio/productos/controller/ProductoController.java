@@ -93,6 +93,26 @@ public class ProductoController extends CommonController<Producto, ProductoServi
         return ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).body(img);
     }
 
+    @GetMapping("/nombre")
+    public ResponseEntity<?> buscarPorNombre(@RequestParam String nombre) {
+        return ResponseEntity.ok().body(service.findByNombre(nombre));
+    }
+
+    @GetMapping("/precio-cantidad")
+    public ResponseEntity<?> buscarPorPrecioYCantidad(@RequestParam Float precio, @RequestParam Integer cantidad) {
+        return ResponseEntity.ok().body(service.findByPrecioAndCantidadOrderByIdDesc(precio, cantidad));
+    }
+
+    @GetMapping("/precio-entre")
+    public ResponseEntity<?> buscarPorPrecioEntre(@RequestParam Float precioIni, @RequestParam Float precioFin) {
+        return ResponseEntity.ok().body(service.findByPrecioBetween(precioIni, precioFin));
+    }
+
+    @GetMapping("/nombre-en")
+    public ResponseEntity<?> buscarPorNombreEn(@RequestParam String[] nombre) {
+        return ResponseEntity.ok().body(service.findByNombreIn(nombre));
+    }
+
     private ResponseEntity<?> validar(BindingResult result) {
         Map<String, Object> errores = new HashMap<>();
 
