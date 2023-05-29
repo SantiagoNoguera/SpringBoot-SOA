@@ -11,5 +11,7 @@ public interface ProductoService extends CommonService<Producto> {
     public List<Producto> findByPrecioAndCantidadOrderByIdDesc(Float precio, Integer cantidad);
     public List<Producto> findByPrecioBetween(Float precioIni, Float precioFin);
     public List<Producto> findByNombreIn(String[] nombre);
+    public Producto findByNombreQuery(String nombre);
+    public List<Producto> findByNombreLike(String nombre);
 
 }

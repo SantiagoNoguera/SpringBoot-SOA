@@ -3,6 +3,7 @@ package co.ucentral.edu.co.servicio.productos.repository;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
 import co.edu.ucentral.common.producto.model.Producto;
 
@@ -17,5 +18,13 @@ public interface ProductoRepository extends JpaRepository<Producto, Long> {
 
     //Método tipo QUERY que permite buscar varios elementos a partir de una lista que se envia separada por comas.
     public List<Producto> findByNombreIn(String[] nombre);
+
+    //Método de consulta con lenguaje JPQL que devulve los datos de un producto con el nombre.
+    @Query("SELECT p FROM Producto p WHERE p.nombre = ?1")
+    public Producto findByNombreQuery(String nombre);
+
+    //Método de consulta con leguaje JPQL que devulve todos los productos que se parezcan al nombre consultado.
+    @Query("SELECT p FROM Producto p WHERE p.nombre LIKE %?1%")
+    public List<Producto> findByNombreLike(String nombre);
 
 }

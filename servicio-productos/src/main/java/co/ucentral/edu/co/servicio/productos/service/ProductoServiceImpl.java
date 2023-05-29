@@ -35,5 +35,17 @@ public class ProductoServiceImpl extends CommonServiceImpl<Producto, ProductoRep
     public List<Producto> findByNombreIn(String[] nombre) {
         return repository.findByNombreIn(nombre);
     }
-    
+
+    @Override
+    @Transactional(readOnly = true)
+    public Producto findByNombreQuery(String nombre) {
+        return repository.findByNombreQuery(nombre);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<Producto> findByNombreLike(String nombre) {
+        return repository.findByNombreLike(nombre);
+    }
+
 }

@@ -113,6 +113,16 @@ public class ProductoController extends CommonController<Producto, ProductoServi
         return ResponseEntity.ok().body(service.findByNombreIn(nombre));
     }
 
+    @GetMapping("/nombre-query")
+    public ResponseEntity<?> buscarPorNombreQuery(@RequestParam String nombre) {
+        return ResponseEntity.ok().body(service.findByNombreQuery(nombre));
+    }
+
+    @GetMapping("/nombre-like")
+    public ResponseEntity<?> buscarPorNombreLike(@RequestParam String nombre) {
+        return ResponseEntity.ok().body(service.findByNombreLike(nombre));
+    }
+
     private ResponseEntity<?> validar(BindingResult result) {
         Map<String, Object> errores = new HashMap<>();
 
