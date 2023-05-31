@@ -1,6 +1,7 @@
 package co.ucentral.edu.co.servicio.productos.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import co.edu.ucentral.common.producto.model.Producto;
 import co.edu.ucentral.commons.services.service.CommonService;
@@ -13,5 +14,6 @@ public interface ProductoService extends CommonService<Producto> {
     public List<Producto> findByNombreIn(String[] nombre);
     public Producto findByNombreQuery(String nombre);
     public List<Producto> findByNombreLike(String nombre);
+    public Optional<Producto> findByIdNative(Long id);
 
 }

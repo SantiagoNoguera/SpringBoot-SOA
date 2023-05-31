@@ -1,6 +1,7 @@
 package co.ucentral.edu.co.servicio.productos.repository;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -26,5 +27,9 @@ public interface ProductoRepository extends JpaRepository<Producto, Long> {
     //Método de consulta con leguaje JPQL que devulve todos los productos que se parezcan al nombre consultado.
     @Query("SELECT p FROM Producto p WHERE p.nombre LIKE %?1%")
     public List<Producto> findByNombreLike(String nombre);
+
+    //Método de consulta con leguaje SQL nativo que devuelve un producto por su id.
+    @Query(value = "SELECT * FROM productos WHERE id = ?1", nativeQuery = true)
+    public Optional<Producto> findByIdNative(Long id);
 
 }

@@ -1,6 +1,7 @@
 package co.ucentral.edu.co.servicio.productos.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -46,6 +47,12 @@ public class ProductoServiceImpl extends CommonServiceImpl<Producto, ProductoRep
     @Transactional(readOnly = true)
     public List<Producto> findByNombreLike(String nombre) {
         return repository.findByNombreLike(nombre);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public Optional<Producto> findByIdNative(Long id) {
+        return repository.findByIdNative(id);
     }
 
 }

@@ -123,6 +123,17 @@ public class ProductoController extends CommonController<Producto, ProductoServi
         return ResponseEntity.ok().body(service.findByNombreLike(nombre));
     }
 
+    @GetMapping("/native/{id}")
+    public ResponseEntity<?> buscarPorIdNative(@PathVariable Long id) {
+        Optional<Producto> optional = service.findByIdNative(id);
+
+        if (!optional.isPresent()) {
+            return ResponseEntity.notFound().build();
+        }
+
+        return ResponseEntity.ok(optional.get());
+    }
+
     private ResponseEntity<?> validar(BindingResult result) {
         Map<String, Object> errores = new HashMap<>();
 
