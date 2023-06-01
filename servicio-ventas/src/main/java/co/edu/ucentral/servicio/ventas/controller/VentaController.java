@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import co.edu.ucentral.common.cliente.model.Cliente;
+import co.edu.ucentral.common.producto.model.Producto;
 import co.edu.ucentral.commons.services.controller.CommonController;
 import co.edu.ucentral.servicio.ventas.model.Venta;
 import co.edu.ucentral.servicio.ventas.service.VentaService;
@@ -38,6 +39,12 @@ public class VentaController extends CommonController<Venta, VentaService> {
     @GetMapping("/cliente")
     public ResponseEntity<?> listarVentasCliente(@RequestBody Cliente cliente) {
         return ResponseEntity.ok().body(service.findByCliente(cliente));
+    }
+
+    @GetMapping("/productos")
+    public ResponseEntity<?> buscarProductos() {
+        Iterable<Producto> lista = service.findProducto();
+        return ResponseEntity.ok(lista);
     }
     
 }
