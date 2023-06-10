@@ -14,6 +14,7 @@ public interface ProductoService extends CommonService<Producto> {
     public List<Producto> findByNombreIn(String[] nombre);
     public Producto findByNombreQuery(String nombre);
     public List<Producto> findByNombreLike(String nombre);
+    public List<Producto> findAllNative();
     public Optional<Producto> findByIdNative(Long id);
 
 }

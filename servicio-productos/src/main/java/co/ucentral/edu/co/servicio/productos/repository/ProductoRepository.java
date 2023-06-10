@@ -28,6 +28,10 @@ public interface ProductoRepository extends JpaRepository<Producto, Long> {
     @Query("SELECT p FROM Producto p WHERE p.nombre LIKE %?1%")
     public List<Producto> findByNombreLike(String nombre);
 
+    //Método de consulta con leguaje SQL netivo que devuelve toda la tabla de productos.
+    @Query(value = "SELECT * FROM productos", nativeQuery = true)
+    public List<Producto> findAllNative();
+
     //Método de consulta con leguaje SQL nativo que devuelve un producto por su id.
     @Query(value = "SELECT * FROM productos WHERE id = ?1", nativeQuery = true)
     public Optional<Producto> findByIdNative(Long id);

@@ -51,6 +51,12 @@ public class ProductoServiceImpl extends CommonServiceImpl<Producto, ProductoRep
 
     @Override
     @Transactional(readOnly = true)
+    public List<Producto> findAllNative() {
+        return repository.findAllNative();
+    }
+
+    @Override
+    @Transactional(readOnly = true)
     public Optional<Producto> findByIdNative(Long id) {
         return repository.findByIdNative(id);
     }
