@@ -41,6 +41,11 @@ public class VentaController extends CommonController<Venta, VentaService> {
         return ResponseEntity.ok().body(service.findByCliente(cliente));
     }
 
+    @GetMapping("/cliente/{id}")
+    public ResponseEntity<?> listarVentasClienteId(@PathVariable Long id) {
+        return ResponseEntity.ok().body(service.findByClienteId(id));
+    }
+
     @GetMapping("/productos")
     public ResponseEntity<?> buscarProductos() {
         Iterable<Producto> lista = service.findProducto();

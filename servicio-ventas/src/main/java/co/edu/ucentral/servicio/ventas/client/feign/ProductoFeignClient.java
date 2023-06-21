@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import co.edu.ucentral.common.producto.model.Producto;
 
-@FeignClient(name = "servicio-productos", url = "http://localhost:8002")
+@FeignClient(name = "servicio-productos"/*, url = "http://localhost:8002"*/)
 public interface ProductoFeignClient {
 
     @GetMapping("/")

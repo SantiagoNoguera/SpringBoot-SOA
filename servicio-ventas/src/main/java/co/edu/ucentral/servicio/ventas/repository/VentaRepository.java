@@ -8,5 +8,6 @@ import co.edu.ucentral.servicio.ventas.model.Venta;
 public interface VentaRepository extends JpaRepository<Venta, Long> {
 
     public Iterable<Venta> findByCliente(Cliente cliente);
+    public Iterable<Venta> findByClienteId(Long id);
     
 }

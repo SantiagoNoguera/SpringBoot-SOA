@@ -25,6 +25,12 @@ public class VentaServiceImpl extends CommonServiceImpl<Venta, VentaRepository> 
 
     @Override
     @Transactional(readOnly = true)
+    public Iterable<Venta> findByClienteId(Long id) {
+        return repository.findByClienteId(id);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
     public Iterable<Producto> findProducto() {
         return productoFeign.listar();
     }
