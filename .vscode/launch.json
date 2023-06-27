@@ -5,7 +5,8 @@
             "name": "ServidorEurekaApplication",
             "request": "launch",
             "mainClass": "co.edu.ucentral.servidor.eureka.ServidorEurekaApplication",
-            "projectName": "servidor-eureka"
+            "projectName": "servidor-eureka",
+            "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=58506 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=servidor-eureka"
         },
         {
             "type": "java",
@@ -57,6 +58,16 @@
             "args": "",
             "envFile": "${workspaceFolder}/.env",
             "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=52521 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=servicio-usuarios"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ServidorGatewayApplication<servidor-gateway>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "co.edu.ucentral.servidor.gateway.ServidorGatewayApplication",
+            "projectName": "servidor-gateway",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }
