@@ -5,7 +5,7 @@ import java.util.Optional;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
-import co.edu.ucentral.servicio.usuarios.model.Usuario;
+import co.edu.ucentral.common.usuario.model.Usuario;
 
 public interface UsuarioService {
 

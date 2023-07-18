@@ -8,8 +8,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import co.edu.ucentral.servicio.usuarios.model.Usuario;
 import co.edu.ucentral.servicio.usuarios.repository.UsuarioRepository;
+import co.edu.ucentral.common.usuario.model.Usuario;
 
 @Service
 public class UsuarioServicoImpl implements UsuarioService {
