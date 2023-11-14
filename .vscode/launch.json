@@ -68,6 +68,16 @@
             "projectName": "servidor-gateway",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ServicioOauthApplication<servicio-oauth>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "co.edu.ucentral.servicio.oauth.ServicioOauthApplication",
+            "projectName": "servicio-oauth",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }
