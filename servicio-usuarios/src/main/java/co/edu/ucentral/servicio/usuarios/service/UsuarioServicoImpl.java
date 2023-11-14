@@ -46,5 +46,11 @@ public class UsuarioServicoImpl implements UsuarioService {
     public void deleteById(Long id) {
         repository.deleteById(id);
     }
+
+    @Override
+    @Transactional(readOnly = true)
+    public Usuario findByUsername(String username) {
+        return repository.findByUsername(username);
+    }
     
 }
