@@ -1,8 +1,10 @@
 package co.edu.ucentral.servicio.oauth.security;
 
 import java.util.Arrays;
+import java.util.Base64;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -42,10 +44,10 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
         .scopes("read", "write")
         .authorizedGrantTypes("password", "refresh_token")
         .accessTokenValiditySeconds(3600)
-        .refreshTokenValiditySeconds(3600);
-
+        .refreshTokenValiditySeconds(3600)
+        .and()
         //Autorización para aplicación en FronEnd hecha con Android Studio.
-        clients.inMemory().withClient("AndroidStudioApp")
+        .withClient("AndroidStudioApp")
         .secret(passwordEncoder.encode("9876543210"))
         .scopes("read", "write")
         .authorizedGrantTypes("password", "refresh_token")
@@ -70,7 +72,9 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 
     private JwtAccessTokenConverter accessTokenConverter() {
         JwtAccessTokenConverter tokenConverter = new JwtAccessTokenConverter();
-        tokenConverter.setSigningKey("codigo_secreto_firma_jwt");
+
+        //El Código de acceso a la aplicación se encripta en Base64, en el archivo AutorizationManagetJWT.java del servidor-gateway se hace lo mismo.
+        tokenConverter.setSigningKey(Base64.getEncoder().encodeToString("codigo_secreto_12345".getBytes()));
         return tokenConverter;
     }
 
