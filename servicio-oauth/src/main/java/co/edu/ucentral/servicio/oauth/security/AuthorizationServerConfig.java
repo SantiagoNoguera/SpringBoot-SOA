@@ -66,11 +66,13 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
         .tokenEnhancer(tokenEnhancerChain);
     }
 
-    private JwtTokenStore tokenStore() {
+    @Bean
+    public JwtTokenStore tokenStore() {
         return new JwtTokenStore(accessTokenConverter());
     }
 
-    private JwtAccessTokenConverter accessTokenConverter() {
+    @Bean
+    public JwtAccessTokenConverter accessTokenConverter() {
         JwtAccessTokenConverter tokenConverter = new JwtAccessTokenConverter();
 
         //El Código de acceso a la aplicación se encripta en Base64, en el archivo AutorizationManagetJWT.java del servidor-gateway se hace lo mismo.
