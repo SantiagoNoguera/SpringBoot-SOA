@@ -13,6 +13,7 @@ import org.springframework.stereotype.Component;
 import co.edu.ucentral.common.usuario.model.Usuario;
 import co.edu.ucentral.servicio.oauth.service.IUsuarioService;
 
+@SuppressWarnings("deprecation")
 @Component
 public class InfoAditionalToken implements TokenEnhancer {
     
