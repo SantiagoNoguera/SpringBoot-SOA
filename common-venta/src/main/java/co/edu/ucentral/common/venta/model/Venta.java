@@ -1,4 +1,4 @@
-package co.edu.ucentral.servicio.ventas.model;
+package co.edu.ucentral.common.venta.model;
 
 import java.io.Serializable;
 import java.util.Date;

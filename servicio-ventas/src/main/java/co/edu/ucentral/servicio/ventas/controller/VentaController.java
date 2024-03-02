@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import co.edu.ucentral.common.cliente.model.Cliente;
 import co.edu.ucentral.common.producto.model.Producto;
+import co.edu.ucentral.common.venta.model.Venta;
 import co.edu.ucentral.commons.services.controller.CommonController;
-import co.edu.ucentral.servicio.ventas.model.Venta;
 import co.edu.ucentral.servicio.ventas.service.VentaService;
 
 @RestController

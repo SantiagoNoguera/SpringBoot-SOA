@@ -6,9 +6,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import co.edu.ucentral.common.cliente.model.Cliente;
 import co.edu.ucentral.common.producto.model.Producto;
+import co.edu.ucentral.common.venta.model.Venta;
 import co.edu.ucentral.commons.services.service.CommonServiceImpl;
 import co.edu.ucentral.servicio.ventas.client.feign.ProductoFeignClient;
-import co.edu.ucentral.servicio.ventas.model.Venta;
 import co.edu.ucentral.servicio.ventas.repository.VentaRepository;
 
 @Service

@@ -7,7 +7,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
-@EntityScan({"co.edu.ucentral.common.producto.model", "co.edu.ucentral.common.cliente.model", "co.edu.ucentral.servicio.ventas.model"})
+@EntityScan({"co.edu.ucentral.common.producto.model", "co.edu.ucentral.common.cliente.model", "co.edu.ucentral.common.venta.model"})
 @EnableFeignClients
 @EnableDiscoveryClient
 public class ServicioVentasApplication {
