@@ -6,4 +6,10 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
+  titulo: string = "Bienvenido a AppVentas."
+
+  constructor() { }
+
+  ngOnInit(): void { }
+
 }

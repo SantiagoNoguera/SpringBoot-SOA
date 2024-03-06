@@ -7,6 +7,7 @@ import { ProductosComponent } from './components/productos/productos.component';
 import { VentasComponent } from './components/ventas/ventas.component';
 import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { HomeComponent } from './components/home/home.component';
+import { LayoutModule } from './layout/layout.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HomeComponent } from './components/home/home.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    LayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
