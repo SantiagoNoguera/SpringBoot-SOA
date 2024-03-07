@@ -8,6 +8,8 @@ import { VentasComponent } from './components/ventas/ventas.component';
 import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { HomeComponent } from './components/home/home.component';
 import { LayoutModule } from './layout/layout.module';
+import { ProductoFormComponent } from './components/productos/producto-form.component';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -15,12 +17,14 @@ import { LayoutModule } from './layout/layout.module';
     ProductosComponent,
     VentasComponent,
     UsuariosComponent,
-    HomeComponent
+    HomeComponent,
+    ProductoFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    LayoutModule
+    LayoutModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

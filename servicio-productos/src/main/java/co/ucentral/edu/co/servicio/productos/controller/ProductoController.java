@@ -12,6 +12,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,6 +26,7 @@ import co.edu.ucentral.commons.services.controller.CommonController;
 import co.ucentral.edu.co.servicio.productos.service.ProductoService;
 import jakarta.validation.Valid;
 
+@CrossOrigin({"http://localhost:4200"})
 @Controller
 public class ProductoController extends CommonController<Producto, ProductoService> {
 
