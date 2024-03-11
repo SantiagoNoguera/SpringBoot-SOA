@@ -9,7 +9,7 @@ import { ProductoService } from 'src/app/services/producto.service';
 export class ProductosComponent implements OnInit {
 
   lista: Producto[] = [];
-  titulo: string = '';
+  titulo: string = 'Lista de Productos';
 
   constructor(private service: ProductoService) { }
 

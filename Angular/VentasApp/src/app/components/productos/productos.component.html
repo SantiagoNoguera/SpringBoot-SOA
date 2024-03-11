@@ -1,6 +1,7 @@
 <div class="card border-primary mb3">
     <div class="card-header">{{titulo}}</div>
     <div class="card-body text-primary">
+        <button type="button" class="btn btn-success" routerLink="/productos/form">Crear Producto</button>
         <table class="table table-hover table-striped">
             <thead>
                 <tr>
@@ -9,6 +10,7 @@
                     <th>Cantidad</th>
                     <th>Precio</th>
                     <th>Fecha Creado</th>
+                    <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -18,6 +20,9 @@
                     <td>{{producto.cantidad}}</td>
                     <td>{{producto.precio}}</td>
                     <td>{{producto.createAt | date: 'yyyy-MM-dd'}}</td>
+                    <td>
+                        <button class="btn btn-warning" [routerLink]="['/productos/form', producto.id]">Editar</button>
+                    </td>
                 </tr>
             </tbody>
         </table>
