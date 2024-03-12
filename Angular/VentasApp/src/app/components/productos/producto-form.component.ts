@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Producto } from 'src/app/models/producto';
 import { ProductoService } from 'src/app/services/producto.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-producto-form',
@@ -21,7 +22,7 @@ export class ProductoFormComponent implements OnInit {
 
   crear() {
     this.service.crear(this.producto).subscribe(producto => {
-      alert(`Producto ${producto.nombre} creado con exito!`);
+      Swal.fire('Nuevo:', `Producto ${producto.nombre} creado con exito!`, 'success');
       this.router.navigate(['/productos']);
     }, err => {
       if (err.status === 400) {
@@ -42,7 +43,7 @@ export class ProductoFormComponent implements OnInit {
 
   modificar() {
     this.service.modificar(this.producto).subscribe(producto => {
-      alert(`Producto ${producto.nombre} actualizado con exito!`);
+      Swal.fire('Editar:', `Producto ${producto.nombre} actualizado con exito!`, 'success');
       this.router.navigate(['/productos']);
     }, err => {
       if (err.status === 400) {

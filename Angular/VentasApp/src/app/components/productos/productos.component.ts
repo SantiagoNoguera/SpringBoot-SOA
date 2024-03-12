@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Producto } from 'src/app/models/producto';
 import { ProductoService } from 'src/app/services/producto.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-productos',
@@ -18,12 +19,29 @@ export class ProductosComponent implements OnInit {
   }
 
   public eliminar(producto: Producto): void {
-    if (confirm(`¿Está seguro de eliminar a ${producto.nombre}?`)) {
-      this.service.eliminar(producto.id).subscribe(() => {
-        this.lista = this.lista.filter(p => p !== producto);
-        alert(`Producto ${producto.nombre} eliminado con exito.`)
-      });
-    }
+    Swal.fire({
+      title: 'Alerta!',
+      text: `¿Está seguro de eliminar a ${producto.nombre}?`,
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085D6',
+      cancelButtonColor: '#D33',
+      confirmButtonText: 'Si, Eliminar!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.service.eliminar(producto.id).subscribe(() => {
+          this.lista = this.lista.filter(p => p !== producto);
+          Swal.fire('Eliminado:', `Producto ${producto.nombre} eliminado con exito.`, 'success');
+        });
+      }
+    });
+
+    // if (confirm(`¿Está seguro de eliminar a ${producto.nombre}?`)) {
+    //   this.service.eliminar(producto.id).subscribe(() => {
+    //     this.lista = this.lista.filter(p => p !== producto);
+    //     Swal.fire('Eliminado:', `Producto ${producto.nombre} eliminado con exito.`, 'success');
+    //   });
+    // }
   }
 
 }
