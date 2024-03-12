@@ -22,6 +22,7 @@
                     <td>{{producto.createAt | date: 'yyyy-MM-dd'}}</td>
                     <td>
                         <button class="btn btn-warning" [routerLink]="['/productos/form', producto.id]">Editar</button>
+                        <button class="btn btn-danger" (click)="eliminar(producto)">Eliminar</button>
                     </td>
                 </tr>
             </tbody>

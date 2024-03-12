@@ -17,4 +17,13 @@ export class ProductosComponent implements OnInit {
     this.service.listar().subscribe(lista => this.lista = lista);
   }
 
+  public eliminar(producto: Producto): void {
+    if (confirm(`¿Está seguro de eliminar a ${producto.nombre}?`)) {
+      this.service.eliminar(producto.id).subscribe(() => {
+        this.lista = this.lista.filter(p => p !== producto);
+        alert(`Producto ${producto.nombre} eliminado con exito.`)
+      });
+    }
+  }
+
 }
