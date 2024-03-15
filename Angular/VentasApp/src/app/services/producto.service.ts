@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Producto } from '../models/producto';
@@ -18,6 +18,15 @@ export class ProductoService {
   //Método para listar todos los productos en el BackEnd.
   listar(): Observable<Producto[]> {
     return this.http.get<Producto[]>(this.urlEndPoint);
+  }
+
+  //Método para listar todos los productos en el BackEnd de forma paginada.
+  listarPagina(page: string, size: string): Observable<any> {
+    const params = new HttpParams()
+      .set('page', page)
+      .set('size', size);
+    
+    return this.http.get<any>(`${this.urlEndPoint}/pagina`, {params: params});
   }
 
   //Método para ver los datos de un solo producto.
